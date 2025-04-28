@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adrian Store - Tienda de Moda Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="sticky-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-box">Adrian</span>
+                <span>Store</span>
+            </a>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="products.html" class="nav-link">Productos</a>
+                <a href="#" class="nav-link">Categorías</a>
+                <a href="#" class="nav-link">Nosotros</a>
+            </nav>
+            <div class="header-actions">
+                <!-- Carrito con dropdown -->
+                <div class="cart-dropdown">
+                    <a href="#" class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    <!-- Contenido del carrito -->
+                    <div class="cart-dropdown-content" id="cartDropdownContent">
+                        <!-- Aquí se cargará dinámicamente el contenido del carrito -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <img src="./compu.jpg" alt="Hero background" class="hero-image">
+            <div class="container hero-content">
+                <div class="hero-text animate-fade-in">
+                    <h1>Nueva Colección Primavera 2024</h1>
+                    <p>Descubre las últimas tendencias en moda y accesorios con nuestra nueva colección.</p>
+                    <div class="hero-buttons">
+                        <a href="#producticos" class="btn btn-primary animate-hover">Ver Productos</a>
+                        <a href="#" class="btn btn-outline animate-hover">Explorar Categorías</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <sectionb id="producticos" class="featured-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Productos Destacados</h2>
+                    <a href="products.html" class="view-all">
+                        Ver todos
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="featured-products" id="featuredProducts">
+                    <!-- Featured products will be loaded here via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section class="products-section">
+            <div class="container">
+                <h2>Nuevos Productos</h2>
+                <div class="products-grid" id="newProducts">
+                    <!-- New products will be loaded here via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-grid">
+                    <div class="newsletter-content">
+                        <h2>Suscríbete a nuestro newsletter</h2>
+                        <p>Recibe las últimas novedades, ofertas exclusivas y descuentos directamente en tu correo.</p>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Tu correo electrónico" class="newsletter-input">
+                            <button class="btn btn-primary">Suscribirse</button>
+                        </div>
+                    </div>
+                    <div class="newsletter-image">
+                        <img src="./pro.jpg" alt="Newsletter subscription">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Adrian Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="sticky-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-box">Adrian</span>
+                <span>Store</span>
+            </a>
+            <nav class="main-nav">
+               
+            </nav>
+            <div class="header-actions">
+                <!-- Carrito con dropdown -->
+                <div class="cart-dropdown">
+                 
+                    <!-- Contenido del carrito -->
+                    <div class="cart-dropdown-content" id="cartDropdownContent">
+                        <!-- Aquí se cargará dinámicamente el contenido del carrito -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container products-page">
+            <h1>Nuestros Productos</h1>
+
+            <div class="products-layout">
+                <aside class="filters-sidebar">
+                    <div class="filter-group">
+                        <h3>Categorías</h3>
+                        <div class="filter-options" id="categoryFilters">
+                            <!-- Categories will be loaded here via JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Precio</h3>
+                        <div class="price-slider">
+                            <div class="price-inputs">
+                                <input type="range" id="priceMin" min="0" max="150" value="0" class="price-range">
+                                <input type="range" id="priceMax" min="0" max="150" value="150" class="price-range">
+                            </div>
+                            <div class="price-values">
+                                <span id="priceMinValue">$0</span>
+                                <span id="priceMaxValue">$150</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Ofertas</h3>
+                        <div class="filter-checkbox">
+                            <input type="checkbox" id="onlyDiscount">
+                            <label for="onlyDiscount">Solo productos en oferta</label>
+                        </div>
+                    </div>
+                </aside>
+
+                <div class="products-content">
+                    <div class="products-header">
+                        <p class="products-count" id="productsCount">Mostrando 0 de 0 productos</p>
+                    </div>
+
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Products will be loaded here via JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+  
+
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+    <script src="products-page.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Producto - Adrian Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+
+    <main>
+        <div class="container product-detail-page">
+            <a href="products.html" class="back-link">
+             
+            </a>
+
+            <div class="product-detail" id="productDetail">
+                <!-- Product detail will be loaded here via JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <a href="index.html" class="logo footer-logo">
+                        <span class="logo-box">Adrian</span>
+                        <span>Store</span>
+                    </a>
+                    <p>Tu tienda de moda y accesorios con los mejores precios y la mejor calidad.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+               
+                </div>
+                <div class="footer-column">
+                    <h3>Información</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Envíos</a></li>
+                        <li><a href="#">Devoluciones</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <address>
+                        <p>Calle Principal 123</p>
+                        <p>Ciudad, CP 12345</p>
+                        <p>Email: info@Adrianstore.com</p>
+                        <p>Teléfono: +123 456 7890</p>
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Adrian Store. Todos los derechos reservados.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+    <script src="product-detail.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head >
+     <section id="carrox">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="carrox">Carrito de Compras - Adrian Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</section>
+</head>
+<body>
+    <header class="sticky-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-box">Adrian</span>
+                <span>Store</span>
+            </a>
+            <nav class="main-nav">
+           
+            </nav>
+            <div class="header-actions">
+           
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container cart-page">
+            <h1>Carrito de Compras</h1>
+
+            <div id="cartContent">
+                <!-- Cart content will be loaded here via JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <a href="index.html" class="logo footer-logo">
+                        <span class="logo-box">Adrian</span>
+                        <span>Store</span>
+                    </a>
+                    <p>Tu tienda de moda y accesorios con los mejores precios y la mejor calidad.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="products.html">Productos</a></li>
+                        <li><a href="#">Categorías</a></li>
+                        <li><a href="#">Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Información</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Envíos</a></li>
+                        <li><a href="#">Devoluciones</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <address>
+                        <p>Calle Principal 123</p>
+                        <p>Ciudad, CP 12345</p>
+                        <p>Email: info@Adrianstore.com</p>
+                        <p>Teléfono: +123 456 7890</p>
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Adrian Store. Todos los derechos reservados.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>
+
+<script>
+    // Product data
+const products = [
+    {
+        id: 1,
+        name: "ROG Zephyrus",
+        description: "ROG Zephyrus G16 (2025) GA605",
+        price: 19.99,
+        originalPrice: 24.99,
+        image: "./las.jpg",
+        category: "Tablets",
+        rating: 4.5,
+        discount: 20,
+        featured: true,
+        stock: 50,
+    },
+    {
+        id: 2,
+        name: "ROG Strix",
+        description: "Laptop ROG Strix G18 (2025) G814",
+        price: 49.99,
+        originalPrice: 59.99,
+        image: "./rog.jpg",
+        category: "Laptop",
+        rating: 4.2,
+        discount: 15,
+        featured: true,
+        stock: 30,
+    },
+    {
+        id: 3,
+        name: "Dell  Alienware",
+        description: "Dell nueva laptop Alienware 14",
+        price: 79.99,
+        originalPrice: 99.99,
+        image: "./alien.jpg",
+        category: "Laptop",
+        rating: 4.8,
+        discount: 20,
+        featured: true,
+        stock: 25,
+    },
+    {
+        id: 4,
+        name: "MSi gamer",
+        description: "msi gamer laptop",
+        price: 89.99,
+        originalPrice: 119.99,
+        image: "pc.jpeg",
+        category: "CPU",
+        rating: 4.6,
+        discount: 25,
+        featured: true,
+        stock: 15,
+    },
+    {
+        id: 5,
+        name: "REDMAGIC's Rethinks Mobile",
+        description: "REDMAGIC's Nova Tablet Rethinks Mobile",
+        price: 39.99,
+        originalPrice: 49.99,
+        image: "./fonix.jpeg",
+        category: "Telefono",
+        rating: 4.3,
+        discount: 20,
+        featured: false,
+        stock: 40,
+    },
+    {
+        id: 6,
+        name: "ROG Flow Z13",
+        description: "ROG Flow Z13 (2022)",
+        price: 69.99,
+        originalPrice: 89.99,
+        image: "./fone.jpg",
+        category: "Tablets",
+        rating: 4.7,
+        discount: 22,
+        featured: false,
+        stock: 20,
+    },
+    {
+        id: 7,
+        name: "REDMAGIC Nova",
+        description: "REDMAGIC Nova Gaming Tablet 12+256GB",
+        price: 34.99,
+        originalPrice: 44.99,
+        image: "./tablet.webp",
+        category: "Tablets",
+        rating: 4.4,
+        discount: 22,
+        featured: false,
+        stock: 35,
+    },
+    {
+        id: 8,
+        name: "Asus ROG Mothership",
+        description: " Asus ROG Mothership is a 17.3 inch tablet with a 1920 x 1080",
+        price: 24.99,
+        originalPrice: 29.99,
+        image: "./mom.jpg",
+        category: "tablets",
+        rating: 4.1,
+        discount: 15,
+        featured: false,
+        stock: 45,
+    },
+    {
+        id: 9,
+        name: "Steam deck Rog",
+        description: "Steam deck Asus Rog",
+        price: 19.99,
+        originalPrice: 24.99,
+        image: "./stim.jpeg",
+        category: "Accesorios",
+        rating: 4.0,
+        discount: 20,
+        featured: false,
+        stock: 50,
+    },
+    {
+        id: 10,
+        name: "Steam deck",
+        description: "steam deck de valve corporation",
+        price: 99.99,
+        originalPrice: 129.99,
+        image: "./stem.jpeg",
+        category: "Accesorios",
+        rating: 4.9,
+        discount: 23,
+        featured: false,
+        stock: 10,
+    },
+];
+
+// Cart functionality
+let cart = [];
+
+// Load cart from localStorage
+function loadCart() {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+        try {
+            cart = JSON.parse(savedCart);
+            updateCartCount();
+        } catch (error) {
+            console.error('Error parsing cart from localStorage:', error);
+            cart = [];
+        }
+    }
+}
+
+// Save cart to localStorage
+function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+}
+
+// Update cart count in header
+function updateCartCount() {
+    const cartCountElement = document.getElementById('cartCount');
+    if (cartCountElement) {
+        const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+        cartCountElement.textContent = totalItems;
+    }
+}
+
+// Add product to cart
+function addToCart(productId, quantity = 1) {
+    const product = products.find(p => p.id === productId);
+    
+    if (!product) {
+        console.error('Product not found');
+        return;
+    }
+    
+    const existingItemIndex = cart.findIndex(item => item.productId === productId);
+    
+    if (existingItemIndex !== -1) {
+        // If product already in cart, increase quantity
+        cart[existingItemIndex].quantity += quantity;
+    } else {
+        // If product not in cart, add it
+        cart.push({
+            productId,
+            quantity,
+            price: product.price
+        });
+    }
+    
+    saveCart();
+    
+    // Show confirmation message
+    showToast(`${product.name} añadido al carrito`);
+}
+
+// Remove product from cart
+function removeFromCart(productId) {
+    cart = cart.filter(item => item.productId !== productId);
+    saveCart();
+}
+
+// Update product quantity in cart
+function updateQuantity(productId, quantity) {
+    if (quantity <= 0) {
+        removeFromCart(productId);
+        return;
+    }
+    
+    const itemIndex = cart.findIndex(item => item.productId === productId);
+    
+    if (itemIndex !== -1) {
+        cart[itemIndex].quantity = quantity;
+        saveCart();
+    }
+}
+
+// Clear cart
+function clearCart() {
+    cart = [];
+    saveCart();
+}
+
+// Calculate cart total
+function calculateCartTotal() {
+    return cart.reduce((total, item) => {
+        const product = products.find(p => p.id === item.productId);
+        return total + (product ? product.price * item.quantity : 0);
+    }, 0);
+}
+
+// Show toast notification
+function showToast(message) {
+    // Create toast element if it doesn't exist
+    let toast = document.getElementById('toast');
+    
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'toast';
+        toast.className = 'toast';
+        document.body.appendChild(toast);
+        
+        // Add toast styles if not in CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            .toast {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: var(--color-primary);
+                color: white;
+                padding: 12px 20px;
+                border-radius: var(--border-radius);
+                box-shadow: var(--shadow-md);
+                z-index: 1000;
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.3s, transform 0.3s;
+            }
+            .toast.show {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    // Set message and show toast
+    toast.textContent = message;
+    toast.classList.add('show');
+    
+    // Hide toast after 3 seconds
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 3000);
+}
+
+// Render product card
+function renderProductCard(product, featured = false) {
+    return `
+        <div class="product-card ${featured ? 'featured' : ''}">
+            ${product.discount > 0 ? `<div class="product-discount">${product.discount}% OFF</div>` : ''}
+            <div class="product-image-container">
+                <img src="${product.image}" alt="${product.name}" class="product-image">
+            </div>
+            <div class="product-info">
+                <div class="product-header">
+                    <h3 class="product-title">${product.name}</h3>
+                    <div class="product-rating">
+                        ${Array(5).fill().map((_, i) => `
+                            <i class="fas fa-star${i < Math.floor(product.rating) ? '' : '-half-alt'}"></i>
+                        `).join('')}
+                        <span>${product.rating}</span>
+                    </div>
+                </div>
+                <p class="product-category">${product.category}</p>
+                <div class="product-footer">
+                    <div class="product-price">
+                        <span class="current-price">$${product.price.toFixed(2)}</span>
+                        ${product.originalPrice ? `<span class="original-price">$${product.originalPrice.toFixed(2)}</span>` : ''}
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart(${product.id})">
+                        <i class="fas fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// Initialize page
+document.addEventListener('DOMContentLoaded', function() {
+    // Load cart from localStorage
+    loadCart();
+    
+    // Render featured products
+    const featuredProductsElement = document.getElementById('featuredProducts');
+    if (featuredProductsElement) {
+        const featuredProducts = products.filter(product => product.featured);
+        featuredProductsElement.innerHTML = featuredProducts.map(product => renderProductCard(product, true)).join('');
+    }
+    
+    // Render new products
+    const newProductsElement = document.getElementById('newProducts');
+    if (newProductsElement) {
+        const newProducts = products.slice(0, 8);
+        newProductsElement.innerHTML = newProducts.map(product => renderProductCard(product)).join('');
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get filter elements
+    const categoryFiltersElement = document.getElementById('categoryFilters');
+    const priceMinInput = document.getElementById('priceMin');
+    const priceMaxInput = document.getElementById('priceMax');
+    const priceMinValueElement = document.getElementById('priceMinValue');
+    const priceMaxValueElement = document.getElementById('priceMaxValue');
+    const onlyDiscountCheckbox = document.getElementById('onlyDiscount');
+    const productsGridElement = document.getElementById('productsGrid');
+    const productsCountElement = document.getElementById('productsCount');
+    
+    // Filter state
+    let filters = {
+        categories: [],
+        priceRange: [0, 150],
+        onlyDiscount: false
+    };
+    
+    // Get unique categories
+    const categories = [...new Set(products.map(product => product.category))];
+    
+    // Render category filters
+    if (categoryFiltersElement) {
+        categoryFiltersElement.innerHTML = categories.map(category => `
+            <div class="filter-checkbox">
+                <input type="checkbox" id="category-${category}" data-category="${category}">
+                <label for="category-${category}">${category}</label>
+            </div>
+        `).join('');
+        
+        // Add event listeners to category checkboxes
+        document.querySelectorAll('[data-category]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const category = this.dataset.category;
+                
+                if (this.checked) {
+                    if (!filters.categories.includes(category)) {
+                        filters.categories.push(category);
+                    }
+                } else {
+                    filters.categories = filters.categories.filter(c => c !== category);
+                }
+                
+                applyFilters();
+            });
+        });
+    }
+    
+    // Price range slider events
+    if (priceMinInput && priceMaxInput) {
+        priceMinInput.addEventListener('input', function() {
+            const minValue = parseInt(this.value);
+            const maxValue = parseInt(priceMaxInput.value);
+            
+            if (minValue > maxValue) {
+                this.value = maxValue;
+                filters.priceRange[0] = maxValue;
+            } else {
+                filters.priceRange[0] = minValue;
+            }
+            
+            priceMinValueElement.textContent = `$${filters.priceRange[0]}`;
+            applyFilters();
+        });
+        
+        priceMaxInput.addEventListener('input', function() {
+            const maxValue = parseInt(this.value);
+            const minValue = parseInt(priceMinInput.value);
+            
+            if (maxValue < minValue) {
+                this.value = minValue;
+                filters.priceRange[1] = minValue;
+            } else {
+                filters.priceRange[1] = maxValue;
+            }
+            
+            priceMaxValueElement.textContent = `$${filters.priceRange[1]}`;
+            applyFilters();
+        });
+    }
+    
+    // Discount filter event
+    if (onlyDiscountCheckbox) {
+        onlyDiscountCheckbox.addEventListener('change', function() {
+            filters.onlyDiscount = this.checked;
+            applyFilters();
+        });
+    }
+    
+    // Apply filters and render products
+    function applyFilters() {
+        // Filter products
+        const filteredProducts = products.filter(product => {
+            // Filter by category
+            if (filters.categories.length > 0 && !filters.categories.includes(product.category)) {
+                return false;
+            }
+            
+            // Filter by price
+            if (product.price < filters.priceRange[0] || product.price > filters.priceRange[1]) {
+                return false;
+            }
+            
+            // Filter by discount
+            if (filters.onlyDiscount && (!product.discount || product.discount <= 0)) {
+                return false;
+            }
+            
+            return true;
+        });
+        
+        // Update products count
+        if (productsCountElement) {
+            productsCountElement.textContent = `Mostrando ${filteredProducts.length} de ${products.length} productos`;
+        }
+        
+        // Render filtered products
+        if (productsGridElement) {
+            if (filteredProducts.length === 0) {
+                productsGridElement.innerHTML = `
+                    <div class="empty-products">
+                        <h3>No se encontraron productos</h3>
+                        <p>Intenta cambiar los filtros para ver más resultados.</p>
+                    </div>
+                `;
+            } else {
+                productsGridElement.innerHTML = filteredProducts.map(product => renderProductCard(product)).join('');
+            }
+        }
+    }
+    
+    // Initial render
+    applyFilters();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get product ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = parseInt(urlParams.get('id'));
+    
+    // Get product detail element
+    const productDetailElement = document.getElementById('productDetail');
+    
+    if (!productDetailElement) return;
+    
+    // Find product by ID
+    const product = products.find(p => p.id === productId);
+    
+    if (!product) {
+        // Product not found
+        productDetailElement.innerHTML = `
+            <div class="product-not-found">
+              
+             
+              
+               
+               
+            </div>
+        `;
+        return;
+    }
+    
+    // Render product detail
+    productDetailElement.innerHTML = `
+        <div class="product-detail-grid">
+            <div class="product-detail-image">
+                ${product.discount > 0 ? `<div class="product-discount">${product.discount}% OFF</div>` : ''}
+                <img src="${product.image}" alt="${product.name}">
+            </div>
+            
+            <div class="product-detail-info">
+                <div class="category">${product.category}</div>
+                
+                <h1>${product.name}</h1>
+                
+                <div class="product-detail-rating">
+                    <div class="stars">
+                        ${Array(5).fill().map((_, i) => `
+                            <i class="fas fa-star${i < Math.floor(product.rating || 0) ? '' : ' far'}"></i>
+                        `).join('')}
+                    </div>
+                    <span class="reviews">${product.rating} (${Math.floor(Math.random() * 100) + 50} reseñas)</span>
+                </div>
+                
+                <div class="product-detail-price">
+                    <span class="current">$${product.price.toFixed(2)}</span>
+                    ${product.originalPrice ? `<span class="original">$${product.originalPrice.toFixed(2)}</span>` : ''}
+                </div>
+                
+                <p class="product-detail-description">${product.description}</p>
+                
+                <div class="product-detail-shipping">
+                    <i class="fas fa-truck"></i>
+                    <span>Envío gratis en pedidos superiores a $50</span>
+                </div>
+                
+                <div class="product-detail-stock">
+                    <span class="stock-indicator"></span>
+                    <span>${product.stock > 10 ? 'En stock' : `¡Solo quedan ${product.stock} unidades!`}</span>
+                </div>
+                
+                <div class="product-detail-actions">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" id="decreaseQuantity">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <span class="quantity-value" id="quantityValue">1</span>
+                        <button class="quantity-btn" id="increaseQuantity">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    
+                    <button class="add-to-cart-button" id="addToCartButton">
+                        <i class="fas fa-shopping-cart"></i>
+                        Añadir al Carrito
+                    </button>
+                </div>
+                
+                <div class="product-detail-specs">
+                    <h3>Detalles del producto</h3>
+                    <ul>
+                        <li>Material: Algodón de alta calidad</li>
+                        <li>Origen: Importado</li>
+                        <li>Cuidado: Lavado a máquina, temperatura baja</li>
+                        <li>Garantía: 30 días por defectos de fabricación</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Quantity selector functionality
+    let quantity = 1;
+    const quantityValue = document.getElementById('quantityValue');
+    const decreaseQuantityBtn = document.getElementById('decreaseQuantity');
+    const increaseQuantityBtn = document.getElementById('increaseQuantity');
+    const addToCartButton = document.getElementById('addToCartButton');
+    
+    decreaseQuantityBtn.addEventListener('click', function() {
+        if (quantity > 1) {
+            quantity--;
+            quantityValue.textContent = quantity;
+        }
+    });
+    
+    increaseQuantityBtn.addEventListener('click', function() {
+        if (quantity < product.stock) {
+            quantity++;
+            quantityValue.textContent = quantity;
+        }
+    });
+    
+    addToCartButton.addEventListener('click', function() {
+        addToCart(product.id, quantity);
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    // Get cart content element
+    const cartContentElement = document.getElementById('cartContent');
+    
+    if (!cartContentElement) return;
+    
+    // Render cart
+    function renderCart() {
+        if (cart.length === 0) {
+            // Empty cart
+            cartContentElement.innerHTML = `
+                <div class="cart-empty">
+                    <h2>Tu carrito está vacío</h2>
+                    <p>Parece que aún no has añadido productos a tu carrito de compras.</p>
+                    <a href="products.html" class="btn btn-black">
+                        <i class="fas fa-arrow-left"></i>
+                        Continuar comprando
+                    </a>
+                </div>
+            `;
+            return;
+        }
+        
+        // Calculate totals
+        const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+        const subtotal = calculateCartTotal();
+        const shipping = subtotal >= 50 ? 0 : 4.99;
+        const total = subtotal + shipping;
+        
+        // Render cart with items
+        cartContentElement.innerHTML = `
+            <div class="cart-layout">
+                <div class="cart-items">
+                    <div class="cart-header">
+                        <div class="cart-row">
+                            <h3>Producto</h3>
+                            <h3 class="text-center">Precio</h3>
+                            <h3 class="text-center">Cantidad</h3>
+                            <h3 class="text-right">Total</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="cart-products">
+                        ${cart.map(item => {
+                            const product = products.find(p => p.id === item.productId);
+                            if (!product) return '';
+                            
+                            return `
+                                <div class="cart-product" data-product-id="${product.id}">
+                                    <div class="cart-row">
+                                        <div class="cart-product-info">
+                                            <img src="${product.image}" alt="${product.name}" class="cart-product-image">
+                                            <div class="cart-product-details">
+                                                <h4>${product.name}</h4>
+                                                <p>${product.category}</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="cart-product-price">
+                                            $${product.price.toFixed(2)}
+                                        </div>
+                                        
+                                        <div class="cart-product-quantity">
+                                            <div class="cart-quantity-selector">
+                                                <button class="cart-quantity-btn decrease-quantity" data-product-id="${product.id}">
+                                                    <i class="fas fa-minus"></i>
+                                                </button>
+                                                <span class="cart-quantity-value">${item.quantity}</span>
+                                                <button class="cart-quantity-btn increase-quantity" data-product-id="${product.id}">
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="cart-product-total">
+                                            <span>$${(product.price * item.quantity).toFixed(2)}</span>
+                                            <button class="cart-remove-btn" data-product-id="${product.id}">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+                
+                <div class="cart-summary">
+                    <h3>Resumen del Pedido</h3>
+                    
+                    <div class="cart-summary-item">
+                        <span class="cart-summary-label">Subtotal (${totalItems} productos)</span>
+                        <span>$${subtotal.toFixed(2)}</span>
+                    </div>
+                    
+                    <div class="cart-summary-item">
+                        <span class="cart-summary-label">Envío</span>
+                        <span>${shipping === 0 ? 'Gratis' : `$${shipping.toFixed(2)}`}</span>
+                    </div>
+                    
+                    <div class="cart-summary-total">
+                        <span>Total</span>
+                        <span>$${total.toFixed(2)}</span>
+                    </div>
+                    
+                    <button class="checkout-btn" id="checkoutButton">
+                        Proceder al Pago
+                    </button>
+                </div>
+            </div>
+            
+            <div class="cart-actions">
+                <a href="products.html" class="continue-shopping">
+                    <i class="fas fa-arrow-left"></i>
+                    Continuar comprando
+                </a>
+            </div>
+        `;
+        
+        // Add event listeners to cart buttons
+        document.querySelectorAll('.decrease-quantity').forEach(button => {
+            button.addEventListener('click', function() {
+                const productId = parseInt(this.dataset.productId);
+                const item = cart.find(item => item.productId === productId);
+                
+                if (item) {
+                    updateQuantity(productId, item.quantity - 1);
+                    renderCart();
+                }
+            });
+        });
+        
+        document.querySelectorAll('.increase-quantity').forEach(button => {
+            button.addEventListener('click', function() {
+                const productId = parseInt(this.dataset.productId);
+                const item = cart.find(item => item.productId === productId);
+                const product = products.find(p => p.id === productId);
+                
+                if (item && product && item.quantity < product.stock) {
+                    updateQuantity(productId, item.quantity + 1);
+                    renderCart();
+                }
+            });
+        });
+        
+        document.querySelectorAll('.cart-remove-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const productId = parseInt(this.dataset.productId);
+                removeFromCart(productId);
+                renderCart();
+            });
+        });
+        
+        // Checkout button
+        const checkoutButton = document.getElementById('checkoutButton');
+        if (checkoutButton) {
+            checkoutButton.addEventListener('click', function() {
+                this.textContent = 'Procesando...';
+                this.disabled = true;
+                
+                // Simulate checkout process
+                setTimeout(() => {
+                    alert('¡Gracias por tu compra! Tu pedido ha sido procesado correctamente.');
+                    clearCart();
+                    renderCart();
+                }, 2000);
+            });
+        }
+    }
+    
+    // Initial render
+    renderCart();
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const cartIcon = document.getElementById('cartIcon');
+    const cartDropdownContent = document.getElementById('cartDropdownContent');
+
+    // Toggle dropdown visibility
+    cartIcon.addEventListener('click', function (e) {
+        e.preventDefault(); // Evitar redirección
+        cartDropdownContent.classList.toggle('show');
+    });
+
+    // Cerrar dropdown al hacer clic fuera
+    document.addEventListener('click', function (e) {
+        if (!cartDropdownContent.contains(e.target) && !cartIcon.contains(e.target)) {
+            cartDropdownContent.classList.remove('show');
+        }
+    });
+
+    // Función para renderizar el contenido del carrito
+    function renderCartDropdown() {
+        if (cart.length === 0) {
+            cartDropdownContent.innerHTML = `
+                <div class="cart-empty">
+                    Tu carrito está vacío.
+                </div>
+            `;
+            return;
+        }
+
+        const total = calculateCartTotal();
+cartDropdownContent.innerHTML = `
+    ${cart.map(item => {
+        const product = products.find(p => p.id === item.productId);
+        if (!product) return '';
+        return `
+            <div class="cart-item">
+                <img src="${product.image}" alt="${product.name}">
+                <div class="cart-item-info">
+                    <h4>${product.name}</h4>
+                    <p>${item.quantity} x $${product.price.toFixed(2)}</p>
+                </div>
+                <div class="cart-item-total">$${(product.price * item.quantity).toFixed(2)}</div>
+            </div>
+        `;
+    }).join('')}
+    <div class="cart-summary">
+        <span>Total: $${total.toFixed(2)}</span>
+    </div>
+    <a href="#carrox" class="btn btn-black" id="viewCartButton" style="display: block; margin-top: 16px; text-align: center;">
+        Ver el Carrito
+    </a>
+`;
+
+// Agregamos el event listener para hacer scroll suave al carrito
+const viewCartButton = document.getElementById('viewCartButton');
+if (viewCartButton) {
+    viewCartButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        const carritoSection = document.getElementById('carrox');
+        if (carritoSection) {
+            carritoSection.scrollIntoView({ behavior: 'smooth' });
+            cartDropdownContent.classList.remove('show'); // Opcional: cierra el dropdown
+        }
+    });
+}
+
+}
+    // Renderizar el carrito al cargar la página
+    renderCartDropdown();
+
+    // Actualizar el dropdown cuando cambie el carrito
+    function updateCartDropdown() {
+        renderCartDropdown();
+        updateCartCount();
+    }
+
+    // Escuchar cambios en el carrito
+    document.addEventListener('addToCart', updateCartDropdown);
+    document.addEventListener('removeFromCart', updateCartDropdown);
+});
+</script>
